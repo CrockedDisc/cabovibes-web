@@ -77,14 +77,16 @@ export default function Home() {
             </h2>
           </div>
           <div className="col-span-3 md:col-span-2">
-              <Image
-                src="/images/why-choose-us/extra-1.jpg"
-                alt="Our fleet"
-                fill
-                sizes="(max-width: 768px) 100vw, 40vw"
-                className="object-cover rounded-md"
-                priority
-              />
+            <video
+              src="https://vsdvaupohzzibwlvubnq.supabase.co/storage/v1/object/public/video%20home/video%20why.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="object-cover rounded-md h-full w-full"
+            >
+              Your browser does not support the video tag.
+            </video>
           </div>
           <div className="col-span-3 md:col-span-2">
             <AspectRatio ratio={16 / 9}>
