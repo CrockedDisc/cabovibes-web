@@ -1,10 +1,52 @@
-# Etapa 1: Builder
-FROM node:18-alpine AS builder
+# ------------------------------------------------------
+# Etapa 1: Build
+# ------------------------------------------------------
+FROM node:20-alpine AS builder
 
 WORKDIR /app
 
-# Copiar solo archivos necesarios para las dependencias
+# Copiar archivos necesarios
 COPY package.json package-lock.json ./
+
+# Variables necesarias para el build (Dokploy las inyecta vía Build Arguments)
+ARG RESEND_API_KEY
+ENV RESEND_API_KEY=${RESEND_API_KEY}
+
+ARG NEXT_PUBLIC_SITE_URL
+ENV NEXT_PUBLIC_SITE_URL=${NEXT_PUBLIC_SITE_URL}
+
+ARG NEXT_PUBLIC_SANITY_PROJECT_ID
+ENV NEXT_PUBLIC_SANITY_PROJECT_ID=${NEXT_PUBLIC_SANITY_PROJECT_ID}
+
+ARG NEXT_PUBLIC_SANITY_DATASET
+ENV NEXT_PUBLIC_SANITY_DATASET=${NEXT_PUBLIC_SANITY_DATASET}
+
+ARG SANITY_API_TOKEN
+ENV SANITY_API_TOKEN=${SANITY_API_TOKEN}
+
+ARG SANITY_WEBHOOK_SECRET
+ENV SANITY_WEBHOOK_SECRET=${SANITY_WEBHOOK_SECRET}
+
+ARG PAYPAL_CLIENT_ID
+ENV PAYPAL_CLIENT_ID=${PAYPAL_CLIENT_ID}
+
+ARG PAYPAL_CLIENT_SECRET
+ENV PAYPAL_CLIENT_SECRET=${PAYPAL_CLIENT_SECRET}
+
+ARG NEXT_PUBLIC_PAYPAL_CLIENT_ID
+ENV NEXT_PUBLIC_PAYPAL_CLIENT_ID=${NEXT_PUBLIC_PAYPAL_CLIENT_ID}
+
+ARG PAYPAL_MODE
+ENV PAYPAL_MODE=${PAYPAL_MODE}
+
+ARG DATABASE_URL
+ENV DATABASE_URL=${DATABASE_URL}
+
+ARG DATABASE_URL_DIRECT
+ENV DATABASE_URL_DIRECT=${DATABASE_URL_DIRECT}
+
+ARG DATABASE_URL_SESSION
+ENV DATABASE_URL_SESSION=${DATABASE_URL_SESSION}
 
 # Instalar dependencias
 RUN npm install
@@ -12,18 +54,25 @@ RUN npm install
 # Copiar el resto del proyecto
 COPY . .
 
-# Crear build de producción
+# Generar build (output standalone)
 RUN npm run build
 
+# ------------------------------------------------------
 # Etapa 2: Runtime
-FROM node:18-alpine AS runner
+# ------------------------------------------------------
+FROM node:20-alpine AS runner
 
 WORKDIR /app
 
-# Copiar archivos necesarios del builder
-COPY --from=builder /app ./
+ENV NODE_ENV=production
+ENV PORT=3000
+
+# Copiar standalone optimizado
+COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/.next/static ./.next/static
 
 EXPOSE 3000
 
-# Iniciar Next.js
-CMD ["npm", "start"]
+# Ejecutar Next.js standalone
+CMD ["node", "server.js"]
