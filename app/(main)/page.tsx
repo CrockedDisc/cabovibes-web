@@ -36,7 +36,7 @@ export default function Home() {
             poster="/images/hero.jpg"
             className="object-cover rounded-md"
           >
-            Your browser does not support the video tag.
+            Your browser does not support the video tag. 
           </video>
           <div className="absolute inset-0 bg-gradient-to-b from-foreground/60 via-foreground/40 to-foreground/70 rounded-md" />
 
