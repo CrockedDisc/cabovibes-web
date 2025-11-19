@@ -14,7 +14,7 @@ async function page() {
     <>
       <Header
         ratio={16 / 9}
-        image="/images/what-are-you-interested-in/sunset-ballena.jpg"
+        image="https://vsdvaupohzzibwlvubnq.supabase.co/storage/v1/object/public/video%20home/og/sunset-ballena.jpg"
         ariaLabel="Sunset & Ballena"
         title="Sunset & Ballena"
         description="Experience an unforgettable Los Cabos sunset as you cruise along the coast with golden skies and views of the Arch. A perfect moment to relax, take photos, and enjoy the unique Pacific atmosphere."

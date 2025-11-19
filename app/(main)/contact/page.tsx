@@ -13,7 +13,7 @@ export default function ContactPage() {
     <>
       <Header
         ratio={16 / 9}
-        image="/images/contact/contact-header.jpg"
+        image="https://vsdvaupohzzibwlvubnq.supabase.co/storage/v1/object/public/video%20home/og/contact-header.jpg"
         ariaLabel="Contact Us"
         title="Contact Us"
         description="We're here to help you plan your perfect Los Cabos experience"
