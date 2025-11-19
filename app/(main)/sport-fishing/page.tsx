@@ -35,7 +35,7 @@ async function page() {
     <>
       <Header
         ratio={16 / 9}
-        image="https://vsdvaupohzzibwlvubnq.supabase.co/storage/v1/object/public/video%20home/og/sport-fishing.jpg"
+        image="https://vsdvaupohzzibwlvubnq.supabase.co/storage/v1/object/public/Cabovibes/Sport%20fishing%20boats/images/sport-fishing.jpg"
         ariaLabel="Sport fishing"
         title="Sport Fishing"
         description="Enjoy sport fishing in Los Cabos with expert captains, pro-grade gear, and the thrill of catching marlin or dorado."

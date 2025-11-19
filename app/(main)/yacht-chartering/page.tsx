@@ -14,7 +14,7 @@ async function page() {
     <>
       <Header
         ratio={16 / 9}
-        image="https://vsdvaupohzzibwlvubnq.supabase.co/storage/v1/object/public/video%20home/og/yacht-chartering.jpg"
+        image="https://vsdvaupohzzibwlvubnq.supabase.co/storage/v1/object/public/Cabovibes/Sport%20fishing%20boats/images/yacht-chartering.jpg"
         ariaLabel="Yacht Chartering"
         title="Yacht Chartering"
         description="Enjoy a luxury day in Los Cabos aboard a private yacht with personalized service, premium comfort, and stunning ocean views."

@@ -60,7 +60,7 @@ function CartItem({ item }: { item: ReservationItemType }) {
           <CardDescription className="flex flex-row sm:flex-col gap-2">
             {item.planName}
             <span className="text-sm font-semibold">
-              ${item.subtotal.toFixed(2)}
+              ${item.subtotal.toFixed(2)} USD
             </span>
           </CardDescription>
         </div>

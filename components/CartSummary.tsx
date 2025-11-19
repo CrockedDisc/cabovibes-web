@@ -11,7 +11,7 @@ function CartSummary({ items }: { items: ReservationItemType[] }) {
             <div className="flex flex-row justify-between">
               <span>Subtotal</span>
               <span>
-                ${items.reduce((total, item) => total + item.basePrice, 0)}
+                ${items.reduce((total, item) => total + item.basePrice, 0)} USD
               </span>
             </div>
             <div className="flex flex-row justify-between text-base font-semibold">

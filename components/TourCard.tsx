@@ -46,7 +46,7 @@ function TourCard({ tour }: Props) {
         <CardContent className="flex flex-col">
           <CardTitle className="flex justify-between gap-2 h-8">
             <span>{tour.name}</span>
-            <span>${tour.basePrice}</span>
+            <span>${tour.basePrice} USD</span>
           </CardTitle>
           <CardDescription>
             <span>{tour.size} ft.</span>

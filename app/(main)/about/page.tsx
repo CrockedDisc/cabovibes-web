@@ -19,7 +19,7 @@ This is Cabovibes: passion, detail, and the true essence of Los Cabos.`;
     <>
       <Header
         ratio={16 / 9}
-        image="https://vsdvaupohzzibwlvubnq.supabase.co/storage/v1/object/public/video%20home/og/about-us-header.jpg"
+        image="https://vsdvaupohzzibwlvubnq.supabase.co/storage/v1/object/public/Cabovibes/Sport%20fishing%20boats/images/contact-header.jpg"
         ariaLabel="About Us"
         title="About Us"
         description=""

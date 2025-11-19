@@ -16,7 +16,7 @@ export default async function GalleryPage() {
     <>
       <Header
         ratio={16 / 9}
-        image="https://vsdvaupohzzibwlvubnq.supabase.co/storage/v1/object/public/video%20home/og/gallery-header.jpg"
+        image="https://vsdvaupohzzibwlvubnq.supabase.co/storage/v1/object/public/Cabovibes/Sport%20fishing%20boats/images/gallery-header.jpg"
         ariaLabel="Gallery"
         title="Gallery"
         description="Explore our collection of unforgettable moments in Los Cabos"
