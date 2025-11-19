@@ -269,7 +269,7 @@ export default function BookingSidebar({
                       <div className="flex flex-col">
                         <span className="font-semibold">{plan.planName}</span>
                         <span className="text-sm text-muted-foreground">
-                          ${plan.basePrice}
+                          ${plan.basePrice} USD
                         </span>
                       </div>
                     </Label>
